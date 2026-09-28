@@ -2,11 +2,15 @@
 
 A Windows Stream Deck plugin for Elgato Wave Link. Wave Link stays in charge of routing and volume. This plugin does not change the Windows default audio device.
 
+![Better Audio](marketplace/thumbnail.png)
+
 ## Actions
 
 - **Wave Link Main Output** adjusts the live main output volume on a dial. Each tick moves 1–10%, set separately for the two outputs. Press switches between those outputs. The display shows a live level meter.
 
-![Wave Link Main Output settings](docs/main-output.png)
+![Arc and stereo bars](marketplace/gallery-4.png)
+
+![Output settings](marketplace/gallery-1.png)
 
 
 #### the rest of the actions are kinda in progress
