@@ -1,0 +1,104 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+	"id": "main-output-bars",
+	"items": [
+		{
+			"key": "background",
+			"type": "pixmap",
+			"rect": [4, 4, 192, 92],
+			"zOrder": 1,
+			"value": "./imgs/actions/main-output/background.svg"
+		},
+		{
+			"key": "lefttrack",
+			"type": "pixmap",
+			"rect": [36, 42, 96, 12],
+			"zOrder": 10,
+			"value": "./imgs/actions/main-output/bar-track.svg"
+		},
+		{
+			"key": "righttrack",
+			"type": "pixmap",
+			"rect": [36, 64, 96, 12],
+			"zOrder": 10,
+			"value": "./imgs/actions/main-output/bar-track.svg"
+		},
+		{
+			"key": "leftmeter",
+			"type": "pixmap",
+			"rect": [36, 42, 96, 12],
+			"zOrder": 11,
+			"enabled": false
+		},
+		{
+			"key": "rightmeter",
+			"type": "pixmap",
+			"rect": [36, 64, 96, 12],
+			"zOrder": 11,
+			"enabled": false
+		},
+		{
+			"key": "volumetrack",
+			"type": "pixmap",
+			"rect": [36, 84, 96, 4],
+			"zOrder": 10,
+			"value": "./imgs/actions/main-output/volume-line.svg"
+		},
+		{
+			"key": "volumeline",
+			"type": "pixmap",
+			"rect": [36, 84, 96, 4],
+			"zOrder": 12,
+			"enabled": false
+		},
+		{
+			"key": "name",
+			"type": "text",
+			"rect": [16, 8, 168, 22],
+			"font": { "size": 15, "weight": 700 },
+			"alignment": "left",
+			"text-overflow": "ellipsis",
+			"zOrder": 30,
+			"value": "MAIN OUTPUT"
+		},
+		{
+			"key": "leftlabel",
+			"type": "text",
+			"rect": [16, 40, 16, 16],
+			"font": { "size": 12, "weight": 700 },
+			"alignment": "left",
+			"color": "#bdbdbd",
+			"zOrder": 30,
+			"value": "L"
+		},
+		{
+			"key": "rightlabel",
+			"type": "text",
+			"rect": [16, 62, 16, 16],
+			"font": { "size": 12, "weight": 700 },
+			"alignment": "left",
+			"color": "#bdbdbd",
+			"zOrder": 30,
+			"value": "R"
+		},
+		{
+			"key": "value",
+			"type": "text",
+			"rect": [136, 38, 48, 22],
+			"font": { "size": 20, "weight": 700 },
+			"alignment": "right",
+			"zOrder": 30,
+			"value": "--"
+		},
+		{
+			"key": "unit",
+			"type": "text",
+			"rect": [148, 66, 36, 16],
+			"font": { "size": 13, "weight": 700 },
+			"alignment": "right",
+			"zOrder": 30,
+			"enabled": false,
+			"value": "%"
+		}
+	]
+}

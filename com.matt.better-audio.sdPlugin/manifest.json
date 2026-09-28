@@ -1,0 +1,109 @@
+{
+	"Name": "Better Audio",
+	"Version": "1.0.0.0",
+	"Author": "Matt",
+	"Actions": [
+		{
+			"Name": "Wave Link Main Output",
+			"UUID": "com.matt.better-audio.main-output",
+			"Icon": "imgs/actions/main-output/icon",
+			"Tooltip": "Adjust the Wave Link main output volume, and press to switch between two outputs.",
+			"PropertyInspectorPath": "ui/main-output.html",
+			"Controllers": ["Encoder"],
+			"SupportedInMultiActions": false,
+			"States": [
+				{
+					"Image": "imgs/actions/main-output/icon"
+				}
+			],
+			"Encoder": {
+				"layout": "layouts/main-output.json",
+				"TriggerDescription": {
+					"Rotate": "Adjust main output volume",
+					"Push": "Switch main output",
+					"Touch": "Refresh main output"
+				}
+			}
+		},
+		{
+			"Name": "Route to Mix",
+			"UUID": "com.matt.better-audio.route-mix",
+			"Icon": "imgs/actions/route-mix/icon",
+			"Tooltip": "Press to switch a Wave Link output between two mixes.",
+			"PropertyInspectorPath": "ui/route-mix.html",
+			"Controllers": ["Keypad"],
+			"DisableAutomaticStates": true,
+			"SupportedInMultiActions": false,
+			"States": [
+				{
+					"Image": "imgs/actions/route-mix/icon",
+					"TitleAlignment": "bottom"
+				},
+				{
+					"Image": "imgs/actions/route-mix/icon-on",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Toggle Mix",
+			"UUID": "com.matt.better-audio.mix-toggle",
+			"Icon": "imgs/actions/mix-toggle/icon",
+			"Tooltip": "Press to route an output to this mix. Press again to restore the previous mix.",
+			"PropertyInspectorPath": "ui/mix-toggle.html",
+			"Controllers": ["Keypad"],
+			"DisableAutomaticStates": true,
+			"SupportedInMultiActions": false,
+			"States": [
+				{
+					"Image": "imgs/actions/mix-toggle/icon",
+					"TitleAlignment": "bottom"
+				},
+				{
+					"Image": "imgs/actions/mix-toggle/icon-on",
+					"TitleAlignment": "bottom"
+				}
+			]
+		},
+		{
+			"Name": "Mute in Mix",
+			"UUID": "com.matt.better-audio.system-chat",
+			"Icon": "imgs/actions/system-chat/icon",
+			"Tooltip": "Mute or unmute a Wave Link channel in one mix.",
+			"PropertyInspectorPath": "ui/system-chat.html",
+			"Controllers": ["Keypad"],
+			"DisableAutomaticStates": true,
+			"SupportedInMultiActions": false,
+			"States": [
+				{
+					"Image": "imgs/actions/system-chat/icon",
+					"TitleAlignment": "bottom"
+				},
+				{
+					"Image": "imgs/actions/system-chat/icon-on",
+					"TitleAlignment": "bottom"
+				}
+			]
+		}
+	],
+	"Category": "Better Audio",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "Control the Wave Link main output, switch an output between two mixes, or toggle one mix on and off.",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "24",
+		"Debug": "enabled"
+	},
+	"UUID": "com.matt.better-audio"
+}

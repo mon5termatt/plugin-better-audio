@@ -1,0 +1,29 @@
+{
+	"name": "plugin-better-audio",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "rollup -c",
+		"watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.matt.better-audio\"",
+		"test": "tsx --test src/wavelink/selection.test.ts src/wavelink/state.test.ts src/wavelink/volume-writer.test.ts src/wavelink/level-meter.test.ts src/wavelink/client.test.ts",
+		"validate": "streamdeck validate com.matt.better-audio.sdPlugin"
+	},
+	"type": "module",
+	"devDependencies": {
+		"@elgato/cli": "^1.10.0",
+		"@rollup/plugin-commonjs": "^29.0.2",
+		"@rollup/plugin-node-resolve": "^15.2.2",
+		"@rollup/plugin-terser": "^1.0.0",
+		"@rollup/plugin-typescript": "^12.1.0",
+		"@tsconfig/node20": "^20.1.2",
+		"@types/node": "~24.1.0",
+		"@types/ws": "^8.18.1",
+		"rollup": "^4.0.2",
+		"tslib": "^2.6.2",
+		"tsx": "^4.20.5",
+		"typescript": "^5.2.2"
+	},
+	"dependencies": {
+		"@elgato/streamdeck": "^3.0.0",
+		"ws": "^8.18.3"
+	}
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<title>Wave Link Main Output</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+		<style>
+			#step-tip {
+				display: none;
+				position: fixed;
+				z-index: 20;
+				transform: translate(-50%, -100%);
+				margin-top: -6px;
+				padding: 2px 6px;
+				border-radius: 4px;
+				background: #1c1c1c;
+				color: #fff;
+				font: 600 12px/16px "Segoe UI", sans-serif;
+				pointer-events: none;
+			}
+
+			#step-tip.visible {
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<sdpi-item label="Output A">
+			<sdpi-select
+				setting="outputA"
+				datasource="getOutputs"
+				loading="Loading Wave Link outputs..."
+				placeholder="Select an output"
+			></sdpi-select>
+		</sdpi-item>
+		<sdpi-item label="Output A step (%)">
+			<sdpi-range class="volume-step" setting="stepA" min="1" max="10" step="1" default="1"></sdpi-range>
+		</sdpi-item>
+		<sdpi-item label="Output B">
+			<sdpi-select
+				setting="outputB"
+				datasource="getOutputs"
+				loading="Loading Wave Link outputs..."
+				placeholder="Select an output"
+			></sdpi-select>
+		</sdpi-item>
+		<sdpi-item label="Output B step (%)">
+			<sdpi-range class="volume-step" setting="stepB" min="1" max="10" step="1" default="1"></sdpi-range>
+		</sdpi-item>
+		<sdpi-item label="Level meter">
+			<sdpi-select setting="meterStyle" default="arc">
+				<option value="arc">Arc</option>
+				<option value="bars">Stereo bars</option>
+			</sdpi-select>
+		</sdpi-item>
+		<div id="step-tip"></div>
+		<script>
+			const tip = document.querySelector("#step-tip");
+			let dragging = null;
+
+			const sliderOf = (step) => step.shadowRoot?.querySelector("input") ?? step;
+
+			const showTip = (step, clientX) => {
+				const rect = sliderOf(step).getBoundingClientRect();
+				const min = Number(step.min) || 1;
+				const max = Number(step.max) || 10;
+				const notch = Number(step.step) || 1;
+				const x = Math.min(rect.right, Math.max(rect.left, clientX));
+				const ratio = rect.width === 0 ? 0 : (x - rect.left) / rect.width;
+				let count = min + ratio * (max - min);
+				count = Math.round(count / notch) * notch;
+				count = Math.min(max, Math.max(min, count));
+				tip.textContent = `${count}%`;
+				tip.style.left = `${x}px`;
+				tip.style.top = `${rect.top}px`;
+				tip.classList.add("visible");
+			};
+
+			const hideTip = () => {
+				dragging = null;
+				tip.classList.remove("visible");
+			};
+
+			for (const step of document.querySelectorAll(".volume-step")) {
+				step.addEventListener("pointerdown", (ev) => {
+					dragging = step;
+					showTip(step, ev.clientX);
+				});
+			}
+
+			window.addEventListener("pointermove", (ev) => {
+				if (dragging) {
+					showTip(dragging, ev.clientX);
+				}
+			});
+			window.addEventListener("pointerup", hideTip);
+			window.addEventListener("pointercancel", hideTip);
+		</script>
+	</body>
+</html>

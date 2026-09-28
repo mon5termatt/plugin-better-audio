@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<title>Mute in Mix</title>
+		<meta charset="utf-8" />
+		<script src="https://sdpi-components.dev/releases/v4/sdpi-components.js"></script>
+	</head>
+	<body>
+		<sdpi-item label="Channel">
+			<sdpi-select
+				setting="channel"
+				datasource="getChannels"
+				loading="Loading Wave Link channels..."
+				placeholder="Select a channel"
+			></sdpi-select>
+		</sdpi-item>
+		<sdpi-item label="Mix">
+			<sdpi-select
+				setting="mix"
+				datasource="getMixes"
+				loading="Loading Wave Link mixes..."
+				placeholder="Select a mix"
+			></sdpi-select>
+		</sdpi-item>
+	</body>
+</html>

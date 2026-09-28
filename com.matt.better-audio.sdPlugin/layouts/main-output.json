@@ -1,0 +1,70 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+	"id": "main-output",
+	"items": [
+		{
+			"key": "background",
+			"type": "pixmap",
+			"rect": [4, 4, 192, 92],
+			"zOrder": 1,
+			"value": "./imgs/actions/main-output/background.svg"
+		},
+		{
+			"key": "ticks",
+			"type": "pixmap",
+			"rect": [16, 44, 130, 52],
+			"zOrder": 10,
+			"value": "./imgs/actions/main-output/ticks.svg"
+		},
+		{
+			"key": "track",
+			"type": "pixmap",
+			"rect": [32, 56, 98, 40],
+			"zOrder": 20,
+			"value": "./imgs/actions/main-output/track.svg"
+		},
+		{
+			"key": "levelmeter",
+			"type": "pixmap",
+			"rect": [32, 56, 98, 40],
+			"zOrder": 21,
+			"enabled": false
+		},
+		{
+			"key": "needle",
+			"type": "pixmap",
+			"rect": [45, 69, 72, 27],
+			"zOrder": 30,
+			"enabled": false
+		},
+		{
+			"key": "name",
+			"type": "text",
+			"rect": [16, 8, 168, 22],
+			"font": { "size": 15, "weight": 700 },
+			"alignment": "left",
+			"text-overflow": "ellipsis",
+			"zOrder": 40,
+			"value": "MAIN OUTPUT"
+		},
+		{
+			"key": "value",
+			"type": "text",
+			"rect": [132, 40, 52, 24],
+			"font": { "size": 20, "weight": 700 },
+			"alignment": "right",
+			"zOrder": 40,
+			"value": "--"
+		},
+		{
+			"key": "unit",
+			"type": "text",
+			"rect": [148, 66, 36, 16],
+			"font": { "size": 13, "weight": 700 },
+			"alignment": "right",
+			"zOrder": 40,
+			"enabled": false,
+			"value": "%"
+		}
+	]
+}
