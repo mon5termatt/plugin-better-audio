@@ -5,6 +5,12 @@ A Windows Stream Deck plugin for Elgato Wave Link. Wave Link stays in charge of 
 ## Actions
 
 - **Wave Link Main Output** adjusts the live main output volume on a dial. Each tick moves 1–10%, set separately for the two outputs. Press switches between those outputs. The display shows a live level meter.
+
+![Wave Link Main Output settings](docs/main-output.png)
+
+
+#### the rest of the actions are kinda in progress
+
 - **Route to Mix** switches one output between two mixes.
 - **Toggle Mix** routes one output to a mix, and press again restores the previous mix.
 - **Mute in Mix** mutes or unmutes one channel inside one mix. A new key starts on System and Chat Mix. The channel name sits at the top of the key and the mix name at the bottom. If that channel is not routed to the mix, the key shows a warning and the press does nothing. Add the route in Wave Link first; the plugin cannot create it.
